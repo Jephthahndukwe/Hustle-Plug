@@ -43,21 +43,21 @@ const LandingPage = () => {
               <h2 className='text-[#000] lg:text-[14px] xs:text-[11.5px] font-[700] font-Montserrat leading-[24px]'>36 STATES</h2>
             </span>
           </span>
-          <span className='flex items-center lg:gap-[10px] xs:gap-[5px] xs:mt-[1rem]'>
+          <span className='flex items-center lg:gap-[10px] xs:gap-[5px] lg:mt-0 xs:mt-[1rem]'>
             <h1 className='text-[#E57704] lg:text-[48px] xs:text-[38px] font-[700] font-Montserrat leading-[48px]'>370</h1>
             <span>
               <h2 className='text-[#000] lg:text-[14px] xs:text-[11.5px] font-[700] font-Montserrat leading-[24px]'>1/2 FINALIST</h2>
               <h2 className='text-[#000] lg:text-[14px] xs:text-[11.5px] font-[700] font-Montserrat leading-[24px]'>06 REGIONS</h2>
             </span>
           </span>
-          <span className='flex items-center lg:gap-[10px] xs:gap-[5px] xs:mt-[1rem]'>
+          <span className='flex items-center lg:gap-[10px] xs:gap-[5px] lg:mt-0 xs:mt-[1rem]'>
             <h1 className='text-[#E57704] lg:text-[48px] xs:text-[38px] font-[700] font-Montserrat leading-[48px]'>30</h1>
             <span>
               <h2 className='text-[#000] lg:text-[14px] xs:text-[11.5px] font-[700] font-Montserrat leading-[24px]'>FINALIST</h2>
               <h2 className='text-[#000] lg:text-[14px] xs:text-[11.5px] font-[700] font-Montserrat leading-[24px]'>LAGOS NG</h2>
             </span>
           </span>
-          <span className='flex items-center lg:gap-[10px] xs:gap-[5px] xs:mt-[1rem]'>
+          <span className='flex items-center lg:gap-[10px] xs:gap-[5px] lg:mt-0 xs:mt-[1rem]'>
             <h1 className='text-[#E57704] lg:text-[48px] xs:text-[38px] font-[700] font-Montserrat leading-[48px]'>05</h1>
             <span>
               <h2 className='text-[#000] lg:text-[14px] xs:text-[11.5px] font-[700] font-Montserrat leading-[24px]'>TOP PRIZE</h2>
@@ -81,7 +81,7 @@ const LandingPage = () => {
               <h2 className='text-[#E57704] text-[24px] font-[600] font-Montserrat leading-[29.26px] mt-[1.5rem] text-center'>Women-led SMEs</h2>
               <p className='text-[#2B2B2B] text-[16px] font-[500] font-Montserrat leading-[30px] text-center mt-3'>Women-owned SMEs have traditionally faced barriers to accessing technology and financial resources, and often have unique needs and perspectives. This program will be targeted towards women-owned SMEs to help them leverage the HUSTLE PLUG show to grow and scale their businesses.</p>
             </div>
-            <div className='xs:mt-[2rem]'>
+            <div className='lg:mt-0 xs:mt-[2rem]'>
               <img src={frame2} />
               <h2 className='text-[#E57704] text-[24px] font-[600] font-Montserrat leading-[29.26px] mt-[1.5rem] text-center'>Youth-led SMEs</h2>
               <p className='text-[#2B2B2B] lg:text-[16px] font-[500] font-Montserrat leading-[30px] text-center mt-3'>Young entrepreneurs, brimming with fresh ideas and digital prowess, are the future of our economy. Yet, youth-led SMEs often face unique obstacles that hinder their growth potential. The HUSTLE PLUG  show aims to be a launchpad, propelling these young businesses towards success.</p>
@@ -100,14 +100,14 @@ const LandingPage = () => {
               <h1 className='text-[#000] text-[20px] font-[600] font-Montserrat leading-[24.36px] text-center mt-[2rem]'>Market Opportunity</h1>
               <p className='text-[#2B2B2B] lg:text-[16px] leading-[30px] font-[500] font-Montserrat text-center mt-[1rem] lg:w-[375px] xs:w-[350px]'>The SME will be operating in a growing or untapped market with a clear potential for growth. A deep understanding of the market and customer needs is crucial.</p>
             </div>
-            <div className='xs:mt-[3rem]'>
+            <div className='lg:mt-0 xs:mt-[3rem]'>
               <center>
                 <h1 className='bg-[#FFE0BF] w-[32px] h-[32px] p-[5px] text-[#E57704] text-center text-[20px] leading-[24.38px] font-[600] font-Montserrat rounded-[50%]'>2</h1>
              </center>
               <h1 className='text-[#000] text-[20px] font-[600] font-Montserrat leading-[24.36px] text-center mt-[2rem]'>Business Model</h1>
               <p className='text-[#2B2B2B] lg:text-[16px] leading-[30px] font-[500] font-Montserrat text-center mt-[1rem] lg:w-[375px] xs:w-[350px]'>A clear and well-defined business model is necessary. The SME will have a clear revenue model, pricing strategy, and plan for scaling the business.</p>
             </div>
-            <div className='xs:mt-[3rem]'>
+            <div className='lg:mt-0 xs:mt-[3rem]'>
               <center>
                 <h1 className='bg-[#FFE0BF] w-[32px] h-[32px] p-[5px] text-[#E57704] text-center text-[20px] leading-[24.38px] font-[600] font-Montserrat rounded-[50%]'>3</h1>
              </center>
@@ -123,14 +123,14 @@ const LandingPage = () => {
               <h1 className='text-[#000] text-[20px] font-[600] font-Montserrat leading-[24.36px] text-center mt-[2rem]'>Financials</h1>
               <p className='text-[#2B2B2B] text-[16px] leading-[30px] font-[500] font-Montserrat text-center mt-[1rem] lg:w-[375px] xs:w-[350px]'>The SME will have a solid financial foundation, including a clear understanding of their financial revenue projection and runway. The SME will have a solid plan for raising capital to fuel growth.</p>
             </div>
-            <div className='xs:mt-[3rem]'>
+            <div className='lg:mt-0 xs:mt-[3rem]'>
               <center>
                 <h1 className='bg-[#FFE0BF] w-[32px] h-[32px] p-[5px] text-[#E57704] text-center text-[20px] leading-[24.38px] font-[600] font-Montserrat rounded-[50%]'>5</h1>
              </center>
               <h1 className='text-[#000] text-[20px] font-[600] font-Montserrat leading-[24.36px] text-center mt-[2rem]'>Scalability</h1>
               <p className='text-[#2B2B2B] text-[16px] leading-[30px] font-[500] font-Montserrat text-center mt-[1rem] lg:w-[375px] xs:w-[350px]'>The SME will have a clear strategy for scaling the business, including a plan for customer acquisition, marketing and distribution. </p>
             </div>
-            <div className='xs:mt-[3rem]'>
+            <div className='lg:mt-0 xs:mt-[3rem]'>
               <center>
                 <h1 className='bg-[#FFE0BF] w-[32px] h-[32px] p-[5px] text-[#E57704] text-center text-[20px] leading-[24.38px] font-[600] font-Montserrat rounded-[50%]'>6</h1>
              </center>
@@ -164,7 +164,7 @@ const LandingPage = () => {
               </center>
             </div>
           </div>
-          <div className='lg:px-[60px] xs:px-[10px] xs:mt-[3rem]'>
+          <div className='lg:px-[60px] xs:px-[10px] lg:mt-0 xs:mt-[3rem]'>
             <h1 className='text-[#000] text-[24px] font-[700] font-Montserrat leading-[29.26px]'>Application of sponsorship funds</h1>
             <div className='flex flex-wrap items-center justify-between mt-[1.5rem]'>
               <span className='flex items-center lg:gap-[10px] xs:gap-[5px]'>
@@ -179,13 +179,13 @@ const LandingPage = () => {
                   <h2 className='text-[#000] lg:text-[16px] xs:text-[12px] font-[500] font-Montserrat leading-[24px] lg:w-[169px] xs:w-[110px]'>Hustle Plug accelerator program</h2>
                 </span>
               </span>
-              <span className='flex items-center lg:gap-[10px] xs:gap-[5px] xs:mt-[1rem]'>
+              <span className='flex items-center lg:gap-[10px] xs:gap-[5px] lg:mt-0 xs:mt-[1rem]'>
                 <h1 className='text-[#E57704] lg:text-[48px] xs:text-[30px] font-[700] font-Montserrat leading-[48px]'>20%</h1>
                 <span>
                   <h2 className='text-[#000] lg:text-[16px] xs:text-[12px] font-[500] font-Montserrat leading-[19.5px] lg:w-[81px] xs:w-[100px]'>admin & logistics</h2>
                 </span>
               </span>
-              <span className='flex items-center lg:gap-[10px] xs:gap-[5px] xs:mt-[1rem]'>
+              <span className='flex items-center lg:gap-[10px] xs:gap-[5px] lg:mt-0 xs:mt-[1rem]'>
                 <h1 className='text-[#E57704] lg:text-[48px] xs:text-[30px] font-[700] font-Montserrat leading-[48px]'>25</h1>
                 <span>
                   <h2 className='text-[#000] lg:text-[16px] xs:text-[12px] font-[500] font-Montserrat leading-[19.5px] lg:w-[81px] xs:w-[130px]'>sme prize funding - ¼ finalists</h2>
@@ -202,7 +202,7 @@ const LandingPage = () => {
               <img src={img2} />
               <button className='bg-[#E57704] w-[295px] h-[55px] rounded-[4px] hover:bg-transparent hover:border-[#E57704] hover:border-solid hover:border-[2px] hover:text-[#E57704] text-[#fff] mt-[4rem]'><Link to='' className='text-[20px] font-[700] font-Lato leading-[24px]'>Register</Link></button>
             </div>
-            <div className='xs:mt-[4rem]'>
+            <div className='lg:mt-0 xs:mt-[4rem]'>
               <img src={group} />
             </div>
           </div>
