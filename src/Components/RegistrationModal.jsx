@@ -19,7 +19,7 @@ const RegistrationModal = () => {
       e.preventDefault();
   
       try {
-        const response = await fetch('https://back-end-e5dm.onrender.com/api/doctor/', {
+        const response = await fetch('/api/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
