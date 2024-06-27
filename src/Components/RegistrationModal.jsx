@@ -37,7 +37,7 @@ const RegistrationModal = () => {
               <input
                 type="text"
                 name="phoneNumber"
-                placeholder="Phone Number"
+                placeholder="Phone Number (+234)"
                 className="mb-4 p-2 border border-gray-300 outline-none rounded w-full text-gray-400"
                 required
               />
