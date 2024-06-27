@@ -25,8 +25,8 @@ const LandingPage = () => {
         const { data } = response;
         if (data.loggedIn) {
           // User is registered/logged in
-          setRegistered(true);
-          setShowModal(false);
+          setRegistered(false);
+          setShowModal(true);
         } else {
           // User is not registered, show the modal
           setShowModal(true);
