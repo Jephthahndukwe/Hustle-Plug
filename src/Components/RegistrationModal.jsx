@@ -1,44 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 
+
+const statesInNigeria = [
+  "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", 
+  "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", 
+  "FCT - Abuja", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", 
+  "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", 
+  "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"
+];
+
 const RegistrationModal = () => {
     const [showModal, setShowModal] = useState(true); // Always show modal based on your requirement
-    const [formData, setFormData] = useState({
-      firstName: '',
-      email: '',
-      phoneNumber: '',
-      address: '',
-      password: ''
-    });
-  
-    const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-  
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      try {
-        const response = await fetch('/api/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-  
-        if (!response.ok) {
-          throw new Error('Failed to register user');
-        }
-  
-        setShowModal(true);
-        toast.success('Registration successful');
-      } catch (error) {
-        console.error('Error registering user:', error);
-        toast.error('Registration failed');
-        // Optionally, you can handle the error state or show an error message here
-      }
-    };
 
   return (
     <>
@@ -46,52 +19,53 @@ const RegistrationModal = () => {
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white lg:p-8 xs:p-4 rounded shadow-md lg:w-[50%] xs:w-[90%]">
             <h2 className="text-xl font-bold mb-4 font-Poppins">Registration Form</h2>
-            <form onSubmit={handleSubmit}>
+            <form>
               <input
                 type="text"
                 name="firstName"
                 placeholder="Business Name"
-                value={formData.firstName}
-                onChange={handleChange}
-                className="mb-4 p-2 border border-gray-300 outline-none rounded w-full"
+                className="mb-4 p-2 border border-gray-300 outline-none rounded w-full text-gray-400"
                 required
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Business Email"
-                value={formData.email}
-                onChange={handleChange}
-                className="mb-4 p-2 border border-gray-300 outline-none rounded w-full"
+                className="mb-4 p-2 border border-gray-300 outline-none rounded w-full text-gray-400"
                 required
               />
               <input
                 type="text"
                 name="phoneNumber"
                 placeholder="Phone Number"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                className="mb-4 p-2 border border-gray-300 outline-none rounded w-full"
+                className="mb-4 p-2 border border-gray-300 outline-none rounded w-full text-gray-400"
                 required
               />
-               <input
+               <select
                 type="text"
-                name="address"
-                placeholder="Address"
-                value={formData.address}
-                onChange={handleChange}
-                className="mb-4 p-2 border border-gray-300 outline-none rounded w-full"
+                name="businessNiche"
+                placeholder="Business Niche"
+                className="mb-4 p-2 border border-gray-300 outline-none rounded w-full text-gray-400"
                 required
-              />
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
-                className="mb-4 p-2 border border-gray-300 outline-none rounded w-full"
-                required
-              />
+              >
+                <option value="Select Business Niche" className=''>Select Business Niche</option>
+                <option>Fashion Design</option>
+                <option>Shoe Making</option>
+                <option>Agriculture Business</option>
+                <option>Food Delivery</option>
+                <option>E-commerce</option>
+                <option>Hair / Makeup</option>
+                <option>Art / Painting</option>
+                <option>Food Processing</option>
+                <option>Recycling</option>
+              </select>
+              <select id="state" name="state" className="mb-4 p-2 border border-gray-300 outline-none rounded w-full text-gray-400">
+                {statesInNigeria.map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </select>
               <button
                 type="submit"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
