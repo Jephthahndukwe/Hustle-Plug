@@ -76,7 +76,7 @@ const LandingPage = () => {
           onClose={() => setShowModal(false)} // Provide a way to close the modal    // Function to handle registration
         />
       )}
-        <Navbar registered={true} onLogout={handleLogout} />
+        <Navbar registered={false} onLogout={handleLogout} />
         <div style={{backgroundImage: `url(${img})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}} className='h-[100vh] w-[100%] lg:px-[60px] xs:px-[15px] pt-[7rem]'>
             <h1 className='text-[36px] text-[#E57704] leading-[43.88px] font-[700] font-Montserrat'>WHAT IS #HUSTLE PLUG <span className='text-[#248C00]'>NAIJA</span>?</h1>
             <p className='text-[20px] text-[#fff] leading-[32px] font-Montserrat font-[500] lg:w-[570px] mt-[2rem]'>HUSTLE PLUG is recognizing and celebrating the faces behind the Small and Medium sized Businesses that drive the engine of growth in Nigeria. Over 30 million SMEs power this Nation and this show is about the people and their stories.</p>
