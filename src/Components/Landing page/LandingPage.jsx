@@ -14,31 +14,31 @@ import axios from 'axios'; // Import Axios or your preferred HTTP client
 
 
 const LandingPage = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
-  useEffect(() => {
-    // Check user authentication status from backend
-    const fetchUserStatus = async () => {
-      try {
-        const response = await axios.get('/api/user/status'); // Replace with your actual API endpoint
-        const { data } = response;
-        setShowModal(true);
-        // if (data.loggedIn) {
-        //   // User is registered/logged in
-        //   setRegistered(false);
-        //   setShowModal(true);
-        // } else {
-        //   // User is not registered, show the modal
-        //   setShowModal(true);
-        // }
-      } catch (error) {
-        console.error('Error fetching user status:', error);
-        // Handle error condition if needed
-      }
-    };
+  // useEffect(() => {
+  //   // Check user authentication status from backend
+  //   const fetchUserStatus = async () => {
+  //     try {
+  //       const response = await axios.get('/api/user/status'); // Replace with your actual API endpoint
+  //       const { data } = response;
+  //       setShowModal(true);
+  //       // if (data.loggedIn) {
+  //       //   // User is registered/logged in
+  //       //   setRegistered(false);
+  //       //   setShowModal(true);
+  //       // } else {
+  //       //   // User is not registered, show the modal
+  //       //   setShowModal(true);
+  //       // }
+  //     } catch (error) {
+  //       console.error('Error fetching user status:', error);
+  //       // Handle error condition if needed
+  //     }
+  //   };
 
-    fetchUserStatus();
-  }, []);
+  //   fetchUserStatus();
+  // }, []);
 
   // const handleRegistration = async () => {
   //   // Perform registration logic, e.g., make API call to register user
