@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../Navbar'
 import img from '../../assets/Hustle Plug.png'
 import { IoCheckmarkCircle } from "react-icons/io5";
@@ -9,11 +9,74 @@ import frame3 from '../../assets/Frame 41.png'
 import group from '../../assets/Group 1.png'
 import img2 from '../../assets/Hustle_Plug_BIGI.png'
 import Footer from '../Footer';
+import RegistrationModal from '../RegistrationModal';
+import axios from 'axios'; // Import Axios or your preferred HTTP client
+
 
 const LandingPage = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [registered, setRegistered] = useState(false);
+
+  useEffect(() => {
+    // Check user authentication status from backend
+    const fetchUserStatus = async () => {
+      try {
+        const response = await axios.get('/api/user/status'); // Replace with your actual API endpoint
+        const { data } = response;
+        if (data.loggedIn) {
+          // User is registered/logged in
+          setRegistered(true);
+          setShowModal(false);
+        } else {
+          // User is not registered, show the modal
+          setShowModal(true);
+        }
+      } catch (error) {
+        console.error('Error fetching user status:', error);
+        // Handle error condition if needed
+      }
+    };
+
+    fetchUserStatus();
+  }, []);
+
+  // const handleRegistration = async () => {
+  //   // Perform registration logic, e.g., make API call to register user
+  //   try {
+  //     // Replace this with your actual registration API call
+  //     await axios.post('/api/user/register', { /* registration data if needed */ });
+  //     setRegistered(true);
+  //     setShowModal(false);
+  //   } catch (error) {
+  //     console.error('Error registering user:', error);
+  //     // Handle registration error if needed
+  //   }
+  // };
+
+  const handleLogout = () => {
+    // Simulate logout by calling your backend logout API if applicable
+    // Clear any tokens or session information on backend
+    // After backend confirmation, update state and show modal
+    // axios.post('/api/user/logout')
+    //   .then(() => {
+        setRegistered(false);
+        setShowModal(true);
+      // })
+      // .catch(error => {
+      //   console.error('Error logging out:', error);
+      //   // Handle logout error if needed
+      // });
+  };
+
   return (
     <div>
-        <Navbar/>
+       {/* Registration Modal */}
+       {showModal && (
+        <RegistrationModal
+          onClose={() => setShowModal(false)} // Provide a way to close the modal    // Function to handle registration
+        />
+      )}
+        <Navbar registered={true} onLogout={handleLogout} />
         <div style={{backgroundImage: `url(${img})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}} className='h-[100vh] w-[100%] lg:px-[60px] xs:px-[15px] pt-[7rem]'>
             <h1 className='text-[36px] text-[#E57704] leading-[43.88px] font-[700] font-Montserrat'>WHAT IS #HUSTLE PLUG <span className='text-[#248C00]'>NAIJA</span>?</h1>
             <p className='text-[20px] text-[#fff] leading-[32px] font-Montserrat font-[500] lg:w-[570px] mt-[2rem]'>HUSTLE PLUG is recognizing and celebrating the faces behind the Small and Medium sized Businesses that drive the engine of growth in Nigeria. Over 30 million SMEs power this Nation and this show is about the people and their stories.</p>
@@ -204,7 +267,7 @@ const LandingPage = () => {
             </div>
             <div className='lg:mt-0 xs:mt-[4rem]'>
               <img src={group} />
-            </div>
+            </div>z
           </div>
         </div>
 
