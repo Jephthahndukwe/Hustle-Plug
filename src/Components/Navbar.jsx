@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../assets/Logo.png'
 import { Link } from 'react-router-dom'
 
-const Navbar = ({ registered, onLogout }) => {
+const Navbar = () => {
   return (
     <div className='lg:px-[60px] xs:px-[10px] py-[5px] mt-[8px]'>
         <nav className='flex items-start justify-between'>

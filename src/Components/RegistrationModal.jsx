@@ -31,7 +31,7 @@ const RegistrationModal = () => {
           throw new Error('Failed to register user');
         }
   
-        setShowModal(false);
+        setShowModal(true);
         toast.success('Registration successful');
       } catch (error) {
         console.error('Error registering user:', error);
