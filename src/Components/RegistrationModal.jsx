@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 
 const statesInNigeria = [
-  "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", 
+  "State", "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", 
   "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", 
   "FCT - Abuja", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", 
   "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", 
@@ -48,7 +48,7 @@ const RegistrationModal = () => {
                 className="mb-4 p-2 border border-gray-300 outline-none rounded w-full text-gray-400"
                 required
               >
-                <option value="Select Business Niche" className=''>Select Business Niche</option>
+                <option value="Business Niche" className=''>Business Niche</option>
                 <option>Fashion Design</option>
                 <option>Shoe Making</option>
                 <option>Agriculture Business</option>
