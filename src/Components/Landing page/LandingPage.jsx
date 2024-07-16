@@ -11,69 +11,46 @@ import img2 from '../../assets/Hustle_Plug_BIGI.png'
 import Footer from '../Footer';
 import RegistrationModal from '../RegistrationModal';
 import axios from 'axios'; // Import Axios or your preferred HTTP client
+import { useSelector } from 'react-redux';
+// import LoginPage from '../LoginPage';
 
 
 const LandingPage = () => {
-  const [showModal, setShowModal] = useState(true);
 
-  // useEffect(() => {
-  //   // Check user authentication status from backend
-  //   const fetchUserStatus = async () => {
-  //     try {
-  //       const response = await axios.get('/api/user/status'); // Replace with your actual API endpoint
-  //       const { data } = response;
-  //       setShowModal(true);
-  //       // if (data.loggedIn) {
-  //       //   // User is registered/logged in
-  //       //   setRegistered(false);
-  //       //   setShowModal(true);
-  //       // } else {
-  //       //   // User is not registered, show the modal
-  //       //   setShowModal(true);
-  //       // }
-  //     } catch (error) {
-  //       console.error('Error fetching user status:', error);
-  //       // Handle error condition if needed
-  //     }
-  //   };
+  const [showModal, setShowModal] = useState(false);
 
-  //   fetchUserStatus();
-  // }, []);
+  const userRegister = useSelector((state) => state.userRegister);
+  const { userInfo } = userRegister;
 
-  // const handleRegistration = async () => {
-  //   // Perform registration logic, e.g., make API call to register user
-  //   try {
-  //     // Replace this with your actual registration API call
-  //     await axios.post('/api/user/register', { /* registration data if needed */ });
-  //     setRegistered(true);
-  //     setShowModal(false);
-  //   } catch (error) {
-  //     console.error('Error registering user:', error);
-  //     // Handle registration error if needed
-  //   }
-  // };
+  useEffect(() => {
+    const registered = localStorage.getItem('registered');
+    if (!registered) {
+      setShowModal(true);
+    }
+  }, [userInfo]);
 
-  // const handleLogout = () => {
-  //   // Simulate logout by calling your backend logout API if applicable
-  //   // Clear any tokens or session information on backend
-  //   // After backend confirmation, update state and show modal
-  //   // axios.post('/api/user/logout')
-  //   //   .then(() => {
-  //       setRegistered(false);
-  //       setShowModal(true);
-  //     // })
-  //     // .catch(error => {
-  //     //   console.error('Error logging out:', error);
-  //     //   // Handle logout error if needed
-  //     // });
-  // };
+  useEffect(() => {
+    if (showModal) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [showModal]);
 
   return (
     <div>
        {/* Registration Modal */}
+       {/* {showModal2 && (
+         <LoginPage showModal2={showModal2} setShowModal2={setShowModal} setShowModal={setShowModal} />
+       )} */}
        {showModal && (
         <RegistrationModal
-          onClose={() => setShowModal(true)} // Provide a way to close the modal    // Function to handle registration
+          showModal={showModal}
+          setShowModal={setShowModal}
         />
       )}
         <Navbar />
@@ -86,7 +63,7 @@ const LandingPage = () => {
                 <p className='text-[#fff] leading-[32px] xs:text-[11.5px] lg:text-[16px] font-[600] font-Montserrat flex items-center lg:gap-[10px] xs:gap-[5px]'>MARKET PLACE <IoCheckmarkCircle className='xs:text-[19px] lg:text-[22px]'/></p>
             </div>
             <div className='mt-[3rem] flex items-center lg:gap-[3rem] xs:gap-[1rem] lg:w-[47%]'>
-                <button className='bg-[#E57704] lg:w-[295px] xs:w-[400px] h-[55px] px-[5px] rounded-[8px] hover:bg-transparent hover:border-[#E57704] hover:border-solid hover:border-[1px] hover:text-[#E57704] text-[#fff]'><Link to='' className='lg:text-[20px] xs:text-[15px] font-[700] font-Lato leading-[24px]'>Download Concept Note</Link></button>
+                <button className='bg-[#E57704] lg:w-[295px] xs:w-[400px] h-[55px] px-[5px] rounded-[8px] hover:bg-transparent hover:border-[#E57704] hover:border-solid hover:border-[1px] hover:text-[#E57704] text-[#fff]'><Link to='https://docs.google.com/presentation/d/1VMx5MGec07-0z5bh1AYm2IgeC0ziXtBlrgu88BB1h0Y/edit?usp=sharing' target='_blank' className='lg:text-[20px] xs:text-[15px] font-[700] font-Lato leading-[24px]'>Download Concept Note</Link></button>
                 <button className='border-[#E57704] border-solid border-[1px] lg:w-[295px] xs:w-[300px] h-[53px] rounded-[8px] px-[5px] hover:bg-[#E57704] hover:text-[#fff] text-[#E57704]'><Link to='' className='lg:text-[20px] xs:text-[15px] font-[700] font-Lato leading-[24px]'>Become A Partner</Link></button>
             </div>
         </div>
