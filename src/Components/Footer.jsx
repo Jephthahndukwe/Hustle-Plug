@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../assets/Logo.png'
 import { Link } from 'react-router-dom'
-import { FaFacebook, FaEnvelope, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import { FaTwitter, FaTiktok, FaYoutube, FaInstagram } from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -32,11 +32,10 @@ const Footer = () => {
             <div className='mt-[1.5rem] lg:px-[60px] xs:px-[10px] lg:flex items-center gap-[41rem]'>
                 <h1 className='text-[#000] lg:text-[16px] xs:text-[17px] font-[600] leading-[21px]'>2024 © hustleplug. All Rights Reserved.</h1>
                 <div className='flex items-center lg:gap-[1rem] xs:gap-[2rem] lg:mt-0 xs:mt-[2rem]'>
-                    <FaEnvelope className='text-[#E57704] lg:text-[18px] xs:text-[20px]' />
-                    <Link to='' target='_blank'><FaFacebook className='text-[#E57704] lg:text-[18px] xs:text-[20px]' /></Link>
                     <Link to='https://x.com/HustlePlug360?t=wUTDNjnYrS2YzamHf1cQkA&s=09' target='_blank'><FaTwitter className='text-[#E57704] lg:text-[18px] xs:text-[20px]' /></Link>
                     <Link to='https://www.instagram.com/hustleplug360?igsh=MXRna2FtNTIxZ2tzdg==' target='_blank'><FaInstagram className='text-[#E57704] lg:text-[18px] xs:text-[20px]' /></Link>
-                    <Link to='' target='_blank'><FaLinkedinIn className='text-[#E57704] lg:text-[18px] xs:text-[20px]' /></Link>
+                    <Link to='https://www.tiktok.com/@hustleplug360' target='_blank'><FaTiktok className='text-[#E57704] lg:text-[18px] xs:text-[20px]' /></Link>
+                    <Link to='https://www.youtube.com/channel/UCMfkczJTrbCI2DEndsunHfw' target='_blank'><FaYoutube className='text-[#E57704] lg:text-[18px] xs:text-[20px]' /></Link>
                 </div>
             </div>
     </div>

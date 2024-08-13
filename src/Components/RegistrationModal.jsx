@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { user_register } from './../redux/actions/AuthAction';
+import { FaTimes } from 'react-icons/fa'
 
 const statesInNigeria = [
   "State", "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", 
@@ -18,6 +19,7 @@ const RegistrationModal = ({ setShowModal }) => {
   const [businessNiche, setBusinessNiche] = useState('');
   const [state, setState] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -27,6 +29,7 @@ const RegistrationModal = ({ setShowModal }) => {
 
   useEffect(() => {
     if (userInfo) {
+      setLoading(false);
       setShowModal(false);
     }
   }, [userInfo, setShowModal]);
@@ -44,6 +47,8 @@ const RegistrationModal = ({ setShowModal }) => {
     }
 
     setErrorMessage('');
+    setLoading(true);
+
     const body = {
       businessName,
       businessEmail,
@@ -64,7 +69,10 @@ const RegistrationModal = ({ setShowModal }) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
       <div className="bg-white lg:p-8 xs:p-4 rounded shadow-md lg:w-[50%] xs:w-[90%]">
-        <h2 className="text-xl font-bold mb-4 font-Poppins">Registration Form</h2>
+        <div className='flex items-center justify-between mb-6'>
+        <h2 className="text-xl font-bold font-Poppins">Registration Form</h2>
+        <h2 onClick={() => setShowModal(false)} className='cursor-pointer'><FaTimes className='text-[20px]' /></h2>
+        </div>
         <form onSubmit={submitHandler}>
           <input
             type="text"
@@ -73,6 +81,7 @@ const RegistrationModal = ({ setShowModal }) => {
             required
             value={businessName}
             onChange={(e) => setBusinessName(e.target.value)}
+            disabled={loading}
           />
           <input
             type="email"
@@ -81,6 +90,7 @@ const RegistrationModal = ({ setShowModal }) => {
             required
             value={businessEmail}
             onChange={(e) => setBusinessEmail(e.target.value)}
+            disabled={loading}
           />
           <input
             type="text"
@@ -90,6 +100,7 @@ const RegistrationModal = ({ setShowModal }) => {
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             onKeyPress={handleKeyPress}
+            disabled={loading}
           />
           {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
           <select
@@ -98,6 +109,7 @@ const RegistrationModal = ({ setShowModal }) => {
             required
             value={businessNiche}
             onChange={(e) => setBusinessNiche(e.target.value)}
+            disabled={loading}
           >
             <option value="" disabled>Business Niche</option>
             <option>Fashion Design</option>
@@ -114,6 +126,7 @@ const RegistrationModal = ({ setShowModal }) => {
             className="mb-4 p-2 border border-gray-300 outline-none rounded w-full text-gray-400"
             value={state}
             onChange={(e) => setState(e.target.value)}
+            disabled={loading}
           >
             {statesInNigeria.map((state) => (
               <option key={state} value={state}>
@@ -124,9 +137,10 @@ const RegistrationModal = ({ setShowModal }) => {
           <center>
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-full rounded focus:outline-none focus:shadow-outline mb-2"
+              className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-full rounded focus:outline-none focus:shadow-outline mb-2 ${loading ? 'cursor-not-allowed opacity-50' : ''}`}
+              disabled={loading}
             >
-              Submit
+              {loading ? 'Submitting...' : 'Submit'}
             </button>
           </center>
         </form>

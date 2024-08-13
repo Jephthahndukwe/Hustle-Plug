@@ -19,15 +19,15 @@ const LandingPage = () => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const userRegister = useSelector((state) => state.userRegister);
-  const { userInfo } = userRegister;
+  // const userRegister = useSelector((state) => state.userRegister);
+  // const { userInfo } = userRegister;
 
-  useEffect(() => {
-    const registered = localStorage.getItem('registered');
-    if (!registered) {
-      setShowModal(true);
-    }
-  }, [userInfo]);
+  // useEffect(() => {
+  //   const registered = localStorage.getItem('registered');
+  //   if (!registered) {
+  //     setShowModal(true);
+  //   }
+  // }, [userInfo]);
 
   useEffect(() => {
     if (showModal) {
@@ -43,17 +43,13 @@ const LandingPage = () => {
 
   return (
     <div>
-       {/* Registration Modal */}
-       {/* {showModal2 && (
-         <LoginPage showModal2={showModal2} setShowModal2={setShowModal} setShowModal={setShowModal} />
-       )} */}
        {showModal && (
         <RegistrationModal
           showModal={showModal}
           setShowModal={setShowModal}
         />
       )}
-        <Navbar />
+        <Navbar  setShowModal={setShowModal} />
         <div style={{backgroundImage: `url(${img})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}} className='h-[100vh] w-[100%] lg:px-[60px] xs:px-[15px] pt-[7rem]'>
             <h1 className='text-[36px] text-[#E57704] leading-[43.88px] font-[700] font-Montserrat'>WHAT IS #HUSTLE PLUG <span className='text-[#248C00]'>NAIJA</span>?</h1>
             <p className='text-[20px] text-[#fff] leading-[32px] font-Montserrat font-[500] lg:w-[570px] mt-[2rem]'>HUSTLE PLUG is recognizing and celebrating the faces behind the Small and Medium sized Businesses that drive the engine of growth in Nigeria. Over 30 million SMEs power this Nation and this show is about the people and their stories.</p>
